@@ -1,9 +1,9 @@
-import logo from "../logo.svg";
+import logo from "../assets/Logo Orange.png";
 
 export default function Index() {
     return (
-        <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo"/>
+        <div className="App-header">
+            <img src={logo} className="max-w-[50%]" alt="logo"/>
             <p>
                 Edit <code>src/App.js</code> and save to reload.
             </p>
@@ -15,6 +15,6 @@ export default function Index() {
             >
                 Learn React
             </a>
-        </header>
+        </div>
     )
 }
