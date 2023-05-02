@@ -1,4 +1,3 @@
-import './App.css';
 import { useState } from 'react'
 import BottomTab from './components/navigation/BottomTab'
 import Index from "./pages/Index";
@@ -11,14 +10,14 @@ function App() {
 
     return (
 
-        <div className="App max-h-screen max-w-full overflow-x-hidden">
+        <div className="App max-h-screen max-w-full overflow-x-hidden web">
             {page === "index" &&
                 <Index />
             }
             {page === "search" &&
                 <Search />
             }
-            <BottomTab setPage={setPage}/>
+            <BottomTab setPage={setPage} page={page}/>
         </div>
     );
 }

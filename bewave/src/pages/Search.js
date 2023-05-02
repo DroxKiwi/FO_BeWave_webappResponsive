@@ -1,12 +1,18 @@
 import React from "react"
-import {Map, Marker} from "pigeon-maps"
+import MapView from '../components/search/Map'
+import ListView from "../components/search/List";
+import {useState} from "react";
 
 export default function Search() {
 
+    const [view, setView] = useState("map")
+
     return (
-        <Map height={2000} defaultCenter={[50.879, 4.6997]} defaultZoom={11}>
-            <Marker width={50} anchor={[50.879, 4.6997]}/>
-        </Map>
+
+        <>
+            {view === "map" && <MapView setview={setView}/>}
+            {view === "list" && <ListView setview={setView}/> }
+        </>
     );
 };
 
