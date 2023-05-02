@@ -10,7 +10,7 @@ function App() {
 
     return (
 
-        <div className="App max-h-screen max-w-full overflow-x-hidden web">
+        <div className="App max-h-screen max-w-full overflow-x-hidden web bg-stone-950">
             {page === "index" &&
                 <Index />
             }
