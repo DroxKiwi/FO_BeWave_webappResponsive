@@ -1,19 +1,6 @@
-import React, {useEffect, useState} from "react"
 import musicPlaceholder from "../../assets/music-placeholder.png";
 
-export default function ListView({setview}) {
-
-    const [events, setEvents] = useState({})
-
-    useEffect(() => {
-        const getEvents = async () => {
-            const response = await fetch("http://backendv2.bewaveofficial.com/api/getevents")
-            const jsonData = await response.json()
-            setEvents(jsonData)
-        }
-
-        getEvents()
-    })
+export default function ListView({setview, events}) {
 
     // STRUCTURE :
 
@@ -48,7 +35,7 @@ export default function ListView({setview}) {
             </div>
             {Array.isArray(events) && events?.map(event => {
                 return <div className={"mx-5 my-10"}>
-                    <img src={event.image ? event.image : musicPlaceholder} className="h-[200px] object-cover w-full m-auto mb-3" alt="logo"/>
+                    <img src={event.image ? event.image : musicPlaceholder} className="h-[200px] object-cover w-full m-auto mb-3" alt="Image de l'évènement"/>
                     <h2 className={"font-bold text-2xl"}>{event.name}</h2>
                     <p className={"text-gray-400 "}>Lieu</p>
                     <span className={"font-bold flex flex-row text-lg"}>
